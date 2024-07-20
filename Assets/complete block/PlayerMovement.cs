@@ -28,14 +28,14 @@ public class NewBehaviourScript : MonoBehaviour
         else OnGround = false;
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        if ((horizontal > 0.1f || horizontal < -0.1f) && Mathf.Abs(playerbody.velocity.x) < 5f)
+        if ((horizontal > 0.1f || horizontal < -0.1f) && Mathf.Abs(playerbody.velocity.x) < 1.5f)
         {
             playerbody.AddForce(new Vector2(horizontal * speed, 0f), ForceMode2D.Impulse);
         }
         //Mathf.Abs(playerbody.velocity.y) < 0.005f
         if (vertical > 0.1f && OnGround) 
         {
-            playerbody.AddForce(new Vector2(0f, vertical + thrust),ForceMode2D.Force);
+            playerbody.AddForce(new Vector2(0f, vertical * thrust),ForceMode2D.Impulse);
         }
     }
 }
