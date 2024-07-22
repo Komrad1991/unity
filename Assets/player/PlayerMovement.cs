@@ -13,7 +13,10 @@ public class NewBehaviourScript : MonoBehaviour
     public float rayDistance = 0.5f;
     public float speed = 1.0f;
     public float thrust = 1.0f;
+    public float shift = 1.0f;
 
+    private bool facingRight = true;
+    private float totalSpeed;
     private float HorizontalMove;
     private Rigidbody2D playerbody;
     private bool OnGround = false;
@@ -23,12 +26,24 @@ public class NewBehaviourScript : MonoBehaviour
     }
     private void Update()
     {
+        if (HorizontalMove < 0 && facingRight)
+        {
+            Flip();
+        }
+        if (HorizontalMove > 0 && !facingRight)
+        {
+            Flip(); 
+        }
         if (Input.GetKeyDown(KeyCode.Space) && OnGround)
         {
             Debug.Log("Jump");
             playerbody.AddForce(playerbody.transform.up*thrust, ForceMode2D.Impulse);
         }
-        
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            totalSpeed = shift + speed;
+        }
+        else totalSpeed = speed;
         HorizontalMove = Input.GetAxisRaw("Horizontal");
         animator.SetFloat("HorizontalMove", Mathf.Abs(HorizontalMove));
         animator.SetFloat("Vert",Mathf.Abs(playerbody.velocity.y));
@@ -42,10 +57,16 @@ public class NewBehaviourScript : MonoBehaviour
         }
         else OnGround = false;
         
-        Vector2 targetVelocity = new Vector2(HorizontalMove * speed,playerbody.velocity.y);
+        Vector2 targetVelocity = new Vector2(HorizontalMove * totalSpeed,playerbody.velocity.y);
         playerbody.velocity = targetVelocity;
 
-        
+    }
+    void Flip()
+    {
+        facingRight = !facingRight;
 
+        Vector3 Scale =  transform.localScale;
+        Scale.x *= -1;
+        transform.localScale = Scale;
     }
 }
