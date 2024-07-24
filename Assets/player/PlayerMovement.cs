@@ -19,6 +19,7 @@ public class NewBehaviourScript : MonoBehaviour
     public float thrust = 1.0f;
     public float shift = 1.0f;
     public float wallSlideSpeed = 1.0f;
+    private bool IsJumping = false;
 
     private bool wallSlide;
     private bool doublejump;
@@ -27,6 +28,7 @@ public class NewBehaviourScript : MonoBehaviour
     private float HorizontalMove;
     private void Update()
     {
+        
         if (HorizontalMove < 0 && facingRight)
         {
             Flip();
@@ -43,7 +45,6 @@ public class NewBehaviourScript : MonoBehaviour
                 doublejump = false;
                 Debug.Log("ïðûæîê1");
             }
-            
             else if (!doublejump)
             {
                 doublejump = true;
@@ -62,13 +63,18 @@ public class NewBehaviourScript : MonoBehaviour
         else totalSpeed = speed;
 
         WallSlide();
-
+        animator.SetBool("IsJumping",IsJumping);
         HorizontalMove = Input.GetAxisRaw("Horizontal");
         animator.SetFloat("HorizontalMove", Mathf.Abs(HorizontalMove));
-        animator.SetFloat("Vert",Mathf.Abs(playerbody.velocity.y));
+        animator.SetBool("IsJumping", IsJumping);
+        animator.SetFloat("Vert",playerbody.velocity.y);
+        Debug.Log(playerbody.velocity.y);
     }
     void FixedUpdate()
     {
+        if (!OnGround())
+            IsJumping = true;
+        else IsJumping = false;
         Vector2 targetVelocity = new Vector2(HorizontalMove * totalSpeed,playerbody.velocity.y);
         playerbody.velocity = targetVelocity;
 
@@ -79,6 +85,7 @@ public class NewBehaviourScript : MonoBehaviour
     }
     private bool OnGround()
     {
+        
         return Physics2D.OverlapCircle(GroundCheck.position, 0.2f, Ground);
     }
     private void WallSlide()
