@@ -21,7 +21,6 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-<<<<<<< HEAD
       value: {fileID: -1309579059, guid: c0bbdeac8703db1469f2df954a0d9dd4, type: 3}
     - time: 0.38333333
       value: {fileID: -662835101, guid: c0bbdeac8703db1469f2df954a0d9dd4, type: 3}
@@ -95,13 +94,6 @@ AnimationClip:
       value: {fileID: 399593224, guid: c0bbdeac8703db1469f2df954a0d9dd4, type: 3}
     - time: 7.7
       value: {fileID: -1655651090, guid: c0bbdeac8703db1469f2df954a0d9dd4, type: 3}
-=======
-      value: {fileID: -605625881, guid: a3b811433434546469c16646220ae6ff, type: 3}
-    - time: 0.33333334
-      value: {fileID: -646725482, guid: a3b811433434546469c16646220ae6ff, type: 3}
-    - time: 0.6
-      value: {fileID: -646725482, guid: a3b811433434546469c16646220ae6ff, type: 3}
->>>>>>> 743aa7384a1982071d71e269ebeccd0a4d2625b5
     attribute: m_Sprite
     path: 
     classID: 212
@@ -124,7 +116,6 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-<<<<<<< HEAD
     - {fileID: -1309579059, guid: c0bbdeac8703db1469f2df954a0d9dd4, type: 3}
     - {fileID: -662835101, guid: c0bbdeac8703db1469f2df954a0d9dd4, type: 3}
     - {fileID: -874197389, guid: c0bbdeac8703db1469f2df954a0d9dd4, type: 3}
@@ -162,21 +153,12 @@ AnimationClip:
     - {fileID: -2059979925, guid: c0bbdeac8703db1469f2df954a0d9dd4, type: 3}
     - {fileID: 399593224, guid: c0bbdeac8703db1469f2df954a0d9dd4, type: 3}
     - {fileID: -1655651090, guid: c0bbdeac8703db1469f2df954a0d9dd4, type: 3}
-=======
-    - {fileID: -605625881, guid: a3b811433434546469c16646220ae6ff, type: 3}
-    - {fileID: -646725482, guid: a3b811433434546469c16646220ae6ff, type: 3}
-    - {fileID: -646725482, guid: a3b811433434546469c16646220ae6ff, type: 3}
->>>>>>> 743aa7384a1982071d71e269ebeccd0a4d2625b5
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-<<<<<<< HEAD
     m_StopTime: 7.95
-=======
-    m_StopTime: 0.6166667
->>>>>>> 743aa7384a1982071d71e269ebeccd0a4d2625b5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -195,7 +177,6 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-<<<<<<< HEAD
   m_Events:
   - time: 0.75
     functionName: 
@@ -225,6 +206,3 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-=======
-  m_Events: []
->>>>>>> 743aa7384a1982071d71e269ebeccd0a4d2625b5
